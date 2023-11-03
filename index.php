@@ -13,7 +13,6 @@
   <link href="https://framework-gb.cdn.gob.mx/favicon.ico" rel="shortcut icon">
   <link href="https://www.gob.mx/cms/application.css" rel="stylesheet">
   <link href="https://framework-gb.cdn.gob.mx/assets/styles/main.css" rel="stylesheet">
-  <script type="text/javascript" src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="js/jquery-3.1.1.min.js"></script>
@@ -22,13 +21,12 @@
 </head>
 
 
-<body style="padding: 25px;">
+<body style="padding: 0px;">
 
-  <div class="container">
     <div id="tabla_resultado"></div>
     <header>
       <div class="nav" role="navigation">
-        <nav class="navbar navbar-inverse sub-navbar navbar-fixed-top">
+        <nav class="navbar navbar-inverse">
           <div class="navbar-header"> <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#subenlaces"> <span class="sr-only">Interruptor
                 de Navegación</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
               <span class="icon-bar"></span> </button> <a class="navbar-brand" href="#">HRAEI</a> </div>
@@ -54,10 +52,10 @@
           </div>
         </nav>
       </div>
-  </div>
+
   </header>
 <div class="carrusel">
-  <h1 style="text-align: center; font-size: 28px; margin-top: 30px;">Vacantes Disponibles</h1>
+  <h1 style="text-align: center; font-size: 28px;">Vacantes Disponibles</h1>
     <section id="miSlide" class="carousel slide">
       <ol class="carousel-indicators">
         <li data-target="#miSlide" data-slide-to="0" class="active"></li>
@@ -152,10 +150,6 @@
     </div>
     
   </div>
-<div id="card">
-    <div class="registro">
-      <h4>Registra tu información</h4>
-    </div>
     <script>
       function deleteSp() {
         var inputs = $("input[type=text]");
@@ -172,13 +166,14 @@
       }
     </script>
 
-    <div class="data"></div>
+<div class="data"></div>
     <div class="loader"></div>
-    <form method="POST" id="formulario" name="formulario" autocomplete="off" onsubmit="return limpiar()">
+    <form method="POST" id="formulario" name="formulario" autocomplete="off" onsubmit="return limpiar()" style="padding: 10px;">
       
         <div class="form-row">
           <div class="registro">
-            <h3>Información personal</h3>
+          <h3 style="color: white;">Registra tu información</h3>
+            <h4 style="color: white;">Información personal</h4>
           </div>
           <div class="col-md-6" autocomplete="off">
             <label>Puesto al que desea postularse</label>
@@ -212,11 +207,6 @@
             <label>CURP</label>
             <input type="text" id="curp" name="curp" required class="form-control" autocomplete="off" maxlength="18" minlength="18" onkeyup="deleteSp();">
           </div>
-          <!--
-          <div class="col-md-3">
-            <label>Sube tu CURP</label>
-            <input type="file" class="form-control" name="documentocurp" accept=".pdf">
-          </div>-->
           <div class="col-md-3">
             <label>Nombre</label>
             <input type="text" id="nombre" name="nombre" required class="form-control" autocomplete="off">
@@ -289,11 +279,6 @@
             <label>Entidad de nacimiento</label>
             <input type="text" id="entidadnacimiento" name="entidadnacimiento" required class="form-control" autocomplete="off">
           </div>
-          <!--
-          <div class="col-md-3">
-            <label>Doc. comprobante de domicilio</label>
-            <input type="file" class="form-control" name="comprobantedomicilio" accept=".pdf">
-          </div>-->
           <div class="col-md-3">
             <label>R.F.C con homoclave</label>
             <input type="text" id="rfc" name="rfc" required class="form-control" autocomplete="off" maxlength="13" onkeyup="deleteSp();">
@@ -1254,7 +1239,11 @@
           de sus atribuciones y/o facultades normativas. </p>
       </div>
     </div>
-  </div>
+  <footer style="background: #13322B; width: 100%; height: auto; padding: 5px;">
+        <p style="color: white; text-align: center;">
+            ® Hospital Regional de Alta Especialidad de Ixtapaluca, todos los derechos reservados. <br>
+            Carr Federal México-Puebla Km. 34.5, Zoquiapan, 56530 Ixtapaluca, Méx.</p>
+    </footer>
 </body>
   <script>
     $("#formulario").on("submit", function(e) {
