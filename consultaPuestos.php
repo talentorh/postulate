@@ -17,7 +17,7 @@ $sql = $conexion->prepare("SELECT * FROM descripcionpuestos order by puesto asc"
             </tr>';
 
 
-    while ($row = $sql->fetchAll()) {
+    while ($row = $sql->fetch()) {
 
 
         $tabla .=
@@ -30,4 +30,4 @@ $sql = $conexion->prepare("SELECT * FROM descripcionpuestos order by puesto asc"
             </tr>';
     }
 
-    $tabla .= '</table>';
+   echo $tabla .= '</table>';

@@ -1,15 +1,18 @@
 <?php
 	
-	require ('../conexion.php');
+	require_once '../clases/conexion.php';
+                $conexion = new Conexion();
 	
 	$id_catalogo = $_POST['id_catalogo'];
 	
-	$queryM = "SELECT * FROM dependencias WHERE ramo = '$id_catalogo' ORDER BY nombreunidad asc";
-	$resultadoM = $mysqli->query($queryM);
+	$queryM = $conexion->prepare("SELECT * FROM dependencias WHERE ramo = :ramo ORDER BY nombreunidad asc");
+	$queryM->execute(array(
+		':ramo'=>$id_catalogo
+	));
 	
 	$html= "<option value='0'>Selecciona la dependencia</option>";
 	
-	while($rowM = $resultadoM->fetch_assoc())
+	while($rowM = $queryM->fetch())
 	{
 		$html.= "<option value='".$rowM['id_dependencia']."'>".$rowM['nombreunidad']."</option>";
 	}

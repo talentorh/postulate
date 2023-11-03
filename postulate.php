@@ -264,9 +264,11 @@
               <option value="">Seleccione el puesto</option>
               <meta charset="UTF-8">
               <?php
-              require 'conexion.php';
-              $sql_s = $conexion2->query("SELECT codigopuesto, puesto FROM descripcionpuestos order by puesto asc");
-              while ($row_s = mysqli_fetch_assoc($sql_s)) {
+              require_once 'clases/conexion.php';
+              $conexion = new Conexion();
+              $sql_s = $conexion->prepare("SELECT codigopuesto, puesto FROM descripcionpuestos order by puesto asc");
+                $sql_s->execute();
+              while ($row_s = $sql_s->fetch()) {
                 $ID_usuario = $row_s['codigopuesto'];
                 $nombre = $row_s['puesto'];
               ?>
@@ -312,10 +314,11 @@
             <select name="cbx_estado" id="cbx_estado" required class="form-control">
               <option value="0">Seleccionar Estado</option>
               <?php
-
-              $query = "SELECT id_estado, estado FROM t_estado ";
-              $resultado = $mysqli->query($query);
-              while ($row = $resultado->fetch_assoc()) { ?>
+                require_once 'clases/conexion.php';
+                $conexion = new Conexion();
+              $query = $conexion->prepare("SELECT id_estado, estado FROM t_estado ");
+                $query->execute();
+              while ($row = $query->fetch()) { ?>
                 <option value="<?php echo $row['id_estado']; ?>"><?php echo $row['estado']; ?></option>
               <?php } ?>
             </select>
@@ -900,9 +903,11 @@
             <select name="cbx_empresaone" id="cbx_empresaone" class="form-control">
               <option value="0">Seleccione</option>
               <?php
-              $query = "SELECT id_catalogo, nombreramo FROM catalogoramos ";
-              $resultado = $mysqli->query($query);
-              while ($row = $resultado->fetch_assoc()) { ?>
+              require_once 'clases/conexion.php';
+              $conexion = new Conexion();
+              $query = $conexion->prepare("SELECT id_catalogo, nombreramo FROM catalogoramos");
+              $query->execute();
+              while ($row = $query->fetch()) { ?>
                 <option value="<?php echo $row['id_catalogo']; ?>"><?php echo $row['nombreramo']; ?></option>
               <?php } ?>
             </select>
@@ -921,8 +926,13 @@
             <label>Tipo de puesto</label>
             <select name="empresa" id="empresa" class="form-control">
               <option value="0">Seleccione</option>
-              <?php $resultado = $conexion2->query("SELECT * FROM tipopuesto");
-              while ($row = $resultado->fetch_assoc()) { ?>
+              
+              <?php
+              require_once 'clases/conexion.php';
+              $conexion = new Conexion();
+               $resultado = $conexion->prepare("SELECT * FROM tipopuesto");
+                $resultado->execute();
+              while ($row = $resultado->fetch()) { ?>
                 <option value="<?php echo $row['id_tipopuesto']; ?>"><?php echo $row['descripcionpuesto']; ?></option>
               <?php } ?>
             </select>
@@ -967,9 +977,11 @@
             <select name="cbx_empresados" id="cbx_empresados" class="form-control">
               <option value="0">Seleccione</option>
               <?php
-              $query = "SELECT id_catalogo, nombreramo FROM catalogoramos ";
-              $resultado = $mysqli->query($query);
-              while ($row = $resultado->fetch_assoc()) { ?>
+                require_once 'clases/conexion.php';
+                $conexion = new Conexion();
+              $query =$conexion->prepare("SELECT id_catalogo, nombreramo FROM catalogoramos ");
+                $query->execute();
+              while ($row = $query->fetch()) { ?>
                 <option value="<?php echo $row['id_catalogo']; ?>"><?php echo $row['nombreramo']; ?></option>
               <?php } ?>
             </select>
@@ -989,8 +1001,12 @@
             <label>Tipo de puesto</label>
             <select name="tipopuestodos" id="tipopuestodos" class="form-control">
               <option value="0">Seleccione</option>
-              <?php $resultado = $conexion2->query("SELECT * FROM tipopuesto");
-              while ($row = $resultado->fetch_assoc()) { ?>
+              <?php 
+              require_once 'clases/conexion.php';
+              $conexion = new Conexion();
+              $resultado = $conexion->prepare("SELECT * FROM tipopuesto");
+                $resultado->execute();
+              while ($row = $resultado->fetch()) { ?>
                 <option value="<?php echo $row['id_tipopuesto']; ?>"><?php echo $row['descripcionpuesto']; ?></option>
               <?php } ?>
             </select>
@@ -1035,9 +1051,11 @@
             <select name="cbx_empresatres" id="cbx_empresatres" class="form-control">
               <option value="0">Seleccione</option>
               <?php
-              $query = "SELECT id_catalogo, nombreramo FROM catalogoramos ";
-              $resultado = $mysqli->query($query);
-              while ($row = $resultado->fetch_assoc()) { ?>
+              require_once 'clases/conexion.php';
+              $conexion = new Conexion();
+              $query = $conexion->prepare("SELECT id_catalogo, nombreramo FROM catalogoramos");
+              $query->execute();
+              while ($row = $query->fetch()) { ?>
                 <option value="<?php echo $row['id_catalogo']; ?>"><?php echo $row['nombreramo']; ?></option>
               <?php } ?>
             </select>
@@ -1057,8 +1075,12 @@
             <label>Tipo de puesto</label>
             <select name="tipopuestotres" id="tipopuestotres" class="form-control">
               <option value="0">Seleccione</option>
-              <?php $resultado = $conexion2->query("SELECT * FROM tipopuesto");
-              while ($row = $resultado->fetch_assoc()) { ?>
+              <?php 
+              require_once 'clases/conexion.php';
+              $conexion = new Conexion();
+              $resultado = $conexion->prepare("SELECT * FROM tipopuesto");
+                $resultado->execute();
+              while ($row = $resultado->fetch()) { ?>
                 <option value="<?php echo $row['id_tipopuesto']; ?>"><?php echo $row['descripcionpuesto']; ?></option>
               <?php } ?>
             </select>
