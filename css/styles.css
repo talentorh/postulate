@@ -617,76 +617,7 @@ body{
 
 }
  /*estilos nuevos*/
-.carrusel {
-  width: 100%;
-  height: auto;
-}
-.box1 {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns:  1fr 3fr;
-  margin-top: 0px;
-  margin-left: 0px;
-  padding: 5px;
 
-}
-#card {
-  height: 93vh;
-  overflow: hidden;
-  padding: 10px;
-  background-color: white;
-  border: 1px solid #e0e0e0;
-  box-shadow: 10px 5px 5px #515151;
-  border-radius: 10px;
-  color: #333;
-  cursor: pointer;
-  overflow-y: scroll;
-  margin-top:0;
-  margin-bottom:0;
-
-}
-.adaptar {
-
-margin-left: auto;
-margin-right: auto;
-display: block;
-}
-
-h3 {
-color: #06477B;
-text-align: center;
-
-}
-
-h4 {
-color: white;
-text-align: center;
-font-size: 1.5em;
-}
-
-.registro {
-width: 100%;
-height: auto;
-background: #C8C8C8;
-
-}
-
-label {
-font-size: 13px;
-color: black;
-}
-
-
-.form-control {
-box-shadow: 0 0 1px #000;
-}
-
-p {
-font-size: .9em;
-text-align: justify;
-color: black;
-font-style: normal;
-}
 
 
 
