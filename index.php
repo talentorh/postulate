@@ -16,8 +16,6 @@
   <script type="text/javascript" src="https://framework-gb.cdn.gob.mx/gobmx.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
   <script src="js/jquery-3.1.1.min.js"></script>
   <script src="js/getCatalogos.js"></script>
 
@@ -58,8 +56,8 @@
       </div>
   </div>
   </header>
-
-    <h1 style="text-align: center; font-size: 28px; margin-top: 30px;">Vacantes Disponibles</h1>
+<div class="carrusel">
+  <h1 style="text-align: center; font-size: 28px; margin-top: 30px;">Vacantes Disponibles</h1>
     <section id="miSlide" class="carousel slide">
       <ol class="carousel-indicators">
         <li data-target="#miSlide" data-slide-to="0" class="active"></li>
@@ -120,12 +118,12 @@
         <!--<div class="item">
           <img src="imagenes/CARTEL_AUXILIAR_ADMINISTRATIVO.png" class="adaptar">
         </div>-->
-      </div>
+      
 
       <a href="#miSlide" class="left carousel-control" style="color: yellow;" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a href="#miSlide" class="right carousel-control" style="color: yellow;" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </section>
-
+</div>
       <div class="" style="background: white; ">
         <h1 style="font-size: 1.4em; text-align: center;">Registro de Banco de Talentos</h1>
         <p>Agradecemos su interés por registrar sus datos que conforman su currículum vitae, mediante los cuales, podrá ser seleccionado para participar en el proceso de evaluación, cuando se genere alguna vacante a fin a su perfil académico y/o de su elección.
@@ -133,15 +131,10 @@
         </p>
       </div>
     <br>
-    <div class="ajuste-tabla">
-      <?php
-      require 'consultaPuestos.php';
-
-      ?>
-    </div>
-      <div class="" style="background: white;">
-        <h1 style="font-size: 1.4em; text-align: center;"> Aviso de Confidencialidad</h1>
-        <strong>La información contenida en tu currículum vitae institucional, contiene datos personales considerados
+<div class="box1">
+  <div id="card" >
+        <h1 style="font-size: 2.5rem; text-align: center;"> Aviso de Confidencialidad</h1>
+        <strong style="font-size: 1.5rem; text-align: center;">La información contenida en tu currículum vitae institucional, contiene datos personales considerados
           confidenciales en términos de los artículos 23 y 68, fracciones I, II, IV y V, segundo párrafo, y 116
           último parrafo de la Ley General de Transparencia y Acceso a la información Pública; 9, 16, 113, fracciones I y III
           de la ley federal de Transparencia y Acceso a la Información Pública, en correlación con la Ley General de Protección de Datos
@@ -151,88 +144,18 @@
           con fines de reclutamiento, selección y/o contratación según sea el caso. Datos que para que tengan un uso distinto al
           señalado, se deberá contar con su consentimiento.</strong>
       </div>
-<div class="container">
+    <div id="card">
+      <?php
+      require 'consultaPuestos.php';
+
+      ?>
+    </div>
+    
+  </div>
+<div id="card">
     <div class="registro">
       <h4>Registra tu información</h4>
     </div>
-    <style>
-    
-      .adaptar {
-
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-      }
-
-      h3 {
-        color: #06477B;
-        text-align: center;
-
-      }
-
-      h4 {
-        color: white;
-        text-align: center;
-        font-size: 1.5em;
-      }
-
-      .registro {
-        width: 100%;
-        height: auto;
-        background: #C8C8C8;
-
-      }
-
-      label {
-        font-size: 13px;
-        color: black;
-      }
-
-
-      .form-control {
-        box-shadow: 0 0 1px #000;
-      }
-
-      p {
-        font-size: .9em;
-        text-align: justify;
-        color: black;
-        font-style: normal;
-      }
-
-      @media screen and (max-width: 1920px) {
-
-
-        h3 {
-          color: #06477B;
-          text-align: center;
-          font-size: 16px;
-
-        }
-
-        p {
-          font-size: .9em;
-          text-align: justify;
-          color: black;
-          font-style: normal;
-        }
-      }
-
-      @media screen and (max-width: 995px) {
-        .ajuste-tabla {
-          font-size: .4em;
-
-        }
-
-        p {
-          font-size: .5em;
-          text-align: justify;
-          color: black;
-          font-style: normal;
-        }
-
-      }
-    </style>
     <script>
       function deleteSp() {
         var inputs = $("input[type=text]");
@@ -1320,10 +1243,6 @@
           <input type="submit" id="registrar" value="Registrar" class="btn btn-success"> </div>
     </form>
 
-
-    <script src="js/jquery1.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/script.js"></script>
     <!--fin formulario de relleno-->
 
     <div class="row top-buffer">
@@ -1336,12 +1255,7 @@
       </div>
     </div>
   </div>
-  </div>
-  <script>
-    window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')
-  </script>
-  <script src="js/vendor/bootstrap.js"></script>
-  <script src="js/main.js"></script>
+</body>
   <script>
     $("#formulario").on("submit", function(e) {
 
@@ -1360,7 +1274,7 @@
         contentType: false,
         processData: false,
         beforeSend: function(objeto) {
-          $('#tabla_resultado').html('<div id="tabla_resultado" style="position: fixed;  top: 0px; left: 0px;  width: 100%; height: 100%; z-index: 9999;  opacity: .7; background: url(imagenes/loader2.gif) 50% 50% no-repeat rgb(249,249,249);"><br/></div>');
+          $('#tabla_resultado').html('<div id="tabla_resultado" style="position: fixed;  top: 0px; left: 0px;  width: 100%; height: 100%; z-index: 9999;  opacity: .7; background: url(imagenes/loader.gif) 50% 50% no-repeat rgb(249,249,249);"><br/></div>');
 
         },
         success: function(datos) {
@@ -1372,7 +1286,5 @@
 
     })
   </script>
-
-</body>
 
 </html>
