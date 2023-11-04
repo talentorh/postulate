@@ -2,8 +2,8 @@
 error_reporting(0);
             require_once 'clases/conexion.php';
             $conexion = new Conexion();
-            date_default_timezone_set('America/Mexico_City');
-            $DateAndTime = date('Y-m-d H:i:s');
+            date_default_timezone_set('America/Monterrey');
+            $DateAndTime = date('Y-m-d');
             extract($_POST);
 
             try{
