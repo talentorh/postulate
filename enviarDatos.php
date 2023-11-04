@@ -6,10 +6,6 @@ error_reporting(0);
             $DateAndTime = date('Y-m-d');
             extract($_POST);
 
-            try{
-                $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                $conexion->setAttribute(PDO::ATTR_AUTOCOMMIT,0);
-                $conexion->beginTransaction();
 
                 $consulta = $conexion->prepare("SELECT curp, rfc from datospersonales where curp = :curp and fechainicio between '2023-01-01' and '2023-12-31'");
                     $consulta->execute(array(
@@ -111,7 +107,7 @@ error_reporting(0);
                     ':tiempocursadoposgrado' => $tiempocursadoposgrado,
                     ':documentorecibeposgrado' => $documentorecibeposgrado,
                     ':numerocedulaposgrado' => $numerocedulaposgrado,
-                    ':nombreformaciondoctorado' => $nombreformaciondoctorado, //error en los dos puntos de inicio
+                    ':nombreformaciondoctorado' => $nombreformaciondoctorado,
                     ':nombredoctorado' => $nombredoctorado,
                     ':unidadhospitalariadoctorado' => $unidadhospitalariadoctorado,
                     ':fechainiciodoctorado' => $fechainiciodoctorado,
@@ -332,9 +328,9 @@ error_reporting(0);
                     ':autorizodatosgenerales' => $selCombo5,
                     ':id_postulado' => $id_user
                 ));
-                $validatransac = $conexion->commit();
+            
 
-                if($validatransac != false) {
+                if($sql != false) {
                     echo "<script>Swal.fire({
                         position: 'top-end',
                         icon: 'success',
@@ -342,6 +338,14 @@ error_reporting(0);
                         showConfirmButton: false,
                         timer: 1500
                     })</script>";
+    }else{
+        echo "<script>Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: 'Error al enviar tus datos',
+            showConfirmButton: false,
+            timer: 1500
+        })</script>";
     }
 }else{
     echo "<script>Swal.fire({
@@ -352,16 +356,6 @@ error_reporting(0);
         timer: 1500
     })</script>";
     
-}
-}catch(Exception $e) {
-    $conexion->rollBack();
-    echo "<script>Swal.fire({
-        position: 'top-end',
-        icon: 'error',
-        title: 'Error al enviar tus datos',
-        showConfirmButton: false,
-        timer: 1500
-    })</script>";
 }
                 
             ?>  
