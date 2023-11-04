@@ -3,7 +3,7 @@ error_reporting(0);
             require_once 'clases/conexion.php';
             $conexion = new Conexion();
             date_default_timezone_set('America/Mexico_City');
-            $DateAndTime = date('Y-m-d');
+            $DateAndTime = date('Y-m-d H:i:s');
             extract($_POST);
 
             try{
