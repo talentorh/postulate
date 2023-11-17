@@ -63,13 +63,13 @@
   }
 
   h3 {
-    color: #06477B;
+    color: #000;
     text-align: center;
 
   }
 
   h4 {
-    color: white;
+    color:#000;
     text-align: center;
     font-size: 1.5em;
   }
@@ -97,6 +97,14 @@
     color: black;
     font-style: normal;
   }
+  #cabeceras {
+  width: 100%; 
+  height: auto; 
+  background-color:#6bafcc; 
+  text-align:center;
+  margin-top:10px; 
+  color: white;
+}
 </style>
 
 <body style="padding: 0px;">
@@ -246,13 +254,13 @@
 
   <div class="data"></div>
   <div class="loader"></div>
+  <div class="container">
+  <div class="form-row">
   <form method="POST" id="formulario" name="formulario" autocomplete="off" onsubmit="return limpiar()" style="padding: 10px;">
-
-    <div class="form-row">
-      <div class="registro">
-        <h3 style="color: white;">Registra tu información</h3>
-        <h4 style="color: white;">Información personal</h4>
-      </div>
+  <section style="width: 100%; height: auto;">
+  <h3 style="text-align: center;">Registra tu información</h3>
+        <h4 style="text-align: center;">Información personal</h4>
+    
       <div class="col-md-6" autocomplete="off">
         <label>Puesto al que desea postularse</label>
         <select class="form-control" id="select_puesto" name="select_puesto" style="cursor: pointer;" required onchange="select_proveedor();">
@@ -389,10 +397,11 @@
         <label>Correo electrónico</label>
         <input type="email" id="correo" required name="correo" autocomplete="off" class="form-control">
       </div>
+  </section>
+  <section style="width: 100%; height: auto;">
 
-      <h3>Formación academica<br>
+      <h3 style="text-align: center;">Formación academica<br>
         Nivel medio superior</h3>
-
 
       <div class="form-group col-md-6">
         <label>Nombre de la formación académica</label>
@@ -418,284 +427,542 @@
         <label>Documento que recibe</label>
         <input type="text" id="documentomediosuperior" name="documentomediosuperior" autocomplete="off" class="form-control">
       </div>
-      <!--
-          <div class="form-group col-md-2">
-            <label>Sube tu documento</label>
-            <input type="file" class="form-control" name="archivomediasuperior" accept=".pdf">
-          </div>-->
-      <h3 style="text-align: center;">Nivel superior</h3>
+  </section>
+  <section style="width: 100%; height: auto;">
+  
+      <h3 style="text-align: center;">Nivel tecnico</h3>
+      
 
-      <div class="form-group col-md-6">
-        <label>Nombre de la formación académica</label>
-        <input type="text" id="nombreformacionsuperior" name="nombreformacionsuperior" class="form-control">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Nombre de la institución educativa</label>
-        <input type="text" id="nombresuperior" name="nombresuperior" class="form-control">
-      </div>
-      <div class="form-group col-md-2">
-        <label>Fecha de inicio</label>
-        <input type="date" id="fechasuperiorinicio" name="fechasuperiorinicio" class="form-control">
-      </div>
-      <div class="form-group col-md-2">
-        <label>Fecha término</label>
-        <input type="date" id="fechasuperiortermino" name="fechasuperiortermino" class="form-control">
-      </div>
-      <div class="form-group col-md-2">
-        <label>Años cursados</label>
-        <input type="text" id="tiempocursadosuperior" name="tiempocursadosuperior" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Documento que recibe</label>
-        <input type="text" id="documentosuperior" name="documentosuperior" class="form-control">
-      </div>
-      <!--
-          <div class="form-group col-md-3">
-            <label>Sube tu documento</label>
-            <input type="file" class="form-control" name="archivosuperior" accept=".pdf">
-          </div>
-              -->
-      <div class="form-group col-md-3">
-        <label>N° de cédula profesional</label>
-        <input type="text" id="numerocedulasuperior" name="numerocedulasuperior" class="form-control">
-      </div>
-      <!--
-          <div class="form-group col-md-6">
-            <label>Sube tu cedula</label>
-            <input type="file" class="form-control" name="archivocedulasuperior" accept=".pdf">
-          </div>-->
+                <div class="col-md-6">
+                    <label>Nombre de la formación académica</label>
+                    <input type="text" id="nombreinstituciontecnica" name="nombreinstituciontecnica" autocomplete="off" class="form-control">
+                </div>
+                <div class="col-md-6">
+                    <label>Nombre de la institución educativa</label>
+                    <input type="text" id="nombreformaciontecnica" name="nombreformaciontecnica" autocomplete="off" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label>Fecha de inicio</label>
+                    <input type="date" id="fechainiciotecnico" name="fechainiciotecnico" autocomplete="off" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label>Fecha término</label>
+                    <input type="date" id="fechaterminotecnico" name="fechaterminotecnico" autocomplete="off" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label>Años cursados</label>
+                    <input type="text" id="tiempocursadotecnico" name="tiempocursadotecnico" autocomplete="off" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <label>Documento que recibe</label>
+                    <input type="text" id="documentotecnico" name="documentotecnico" autocomplete="off" class="form-control">
+                </div>
+            
+  </section>
+  <section>
+  <h3 style="text-align: center;">Nivel postecnico</h3>
+  <div style="width: 100%; height: auto;">
+  <div class="form-group col-md-12">
+                    <strong>Agregar postecnico (Solo numeros)</strong>
+                    <input type="number" id="quantityp" name="numpostecnico" autocomplete="off" class="form-control" min="0" max="5" placeholder="EJEMPLO: 1,2,3 etc">
+                </div>
+  </div>
+                <script>
+                    document.getElementById("quantityp").addEventListener("input", (event) => {
+                        let content = '';
 
-      <h3>Nivel Maestría</h3>
+                        const quantity = event.target.value;
 
-      <div class="form-group col-md-6">
-        <label>Nombre de la formación académica</label>
-        <input type="text" id="nombreformacionmaestria" name="nombreformacionmaestria" class="form-control">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Nombre de la institución educativa</label>
-        <input type="text" id="nombremaestria" name="nombremaestria" class="form-control">
-      </div>
-      <div class="form-group col-md-2">
-        <label>Fecha de inicio</label>
-        <input type="date" id="fechainiciomaestria" name="fechainiciomaestria" class="form-control">
-      </div>
-      <div class="form-group col-md-2">
-        <label>Fecha término</label>
-        <input type="date" id="fechaterminomaestria" name="fechaterminomaestria" class="form-control">
-      </div>
-      <div class="form-group col-md-2">
-        <label>Años cursados</label>
-        <input type="text" id="tiempocursadomaestria" name="tiempocursadomaestria" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Documento que recibe</label>
-        <input type="text" id="documentomaestria" name="documentomaestria" class="form-control">
-      </div>
-      <!--
-          <div class="form-group col-md-3">
-            <label>Sube tu documento</label>
-            <input type="file" class="form-control" name="archivomaestria" accept=".pdf">
-          </div>-->
-      <div class="form-group col-md-3">
-        <label>N° de cédula profesional</label>
-        <input type="text" id="cedulamaestria" name="cedulamaestria" class="form-control">
-      </div>
-      <!--
-          <div class="form-group col-md-6">
-            <label>Sube tu cedula</label>
-            <input type="file" class="form-control" name="archivomaestriacedula" accept=".pdf">
-          </div>-->
-
-      <h3>Segunda Maestría</h3>
-
-      <div class="form-group col-md-6">
-        <label>Nombre de la formación académica</label>
-        <input type="text" id="nombreformacionmaestriados" name="nombreformacionmaestriados" class="form-control">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Nombre de la institución educativa</label>
-        <input type="text" id="nombremaestriados" name="nombremaestriados" class="form-control">
-      </div>
-      <div class="form-group col-md-2">
-        <label>Fecha de inicio</label>
-        <input type="date" id="fechainiciomaestriados" name="fechainiciomaestriados" class="form-control">
-      </div>
-      <div class="form-group col-md-2">
-        <label>Fecha término</label>
-        <input type="date" id="fechaterminomaestriados" name="fechaterminomaestriados" class="form-control">
-      </div>
-      <div class="form-group col-md-2">
-        <label>Años cursados</label>
-        <input type="text" id="tiempocursadomaestriados" name="tiempocursadomaestriados" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Documento que recibe</label>
-        <input type="text" id="documentomaestriados" name="documentomaestriados" class="form-control">
-      </div>
-      <!--
-          <div class="form-group col-md-3">
-            <label>Sube tu documento</label>
-            <input type="file" class="form-control" name="archivomaestriados" accept=".pdf">
-          </div>-->
-      <div class="form-group col-md-3">
-        <label>N° de cédula profesional</label>
-        <input type="text" id="cedulamaestriados" name="cedulamaestriados" class="form-control">
-      </div>
-      <!--
-          <div class="form-group col-md-6">
-            <label>Sube tu cedula</label>
-            <input type="file" class="form-control" name="archivomaestriadoscedula" accept=".pdf">
-          </div>-->
-      <h3>Nivel Posgrado/Especialidad</h3>
-
-
-      <div class="form-group col-md-4">
-        <label>Nombre de la formación académica</label>
-        <input type="text" id="nombreformacionposgrado" name="nombreformacionposgrado" class="form-control">
-      </div>
-      <div class="form-group col-md-4">
-        <label>Nombre de la institución educativa</label>
-        <input type="text" id="nombreposgrado" name="nombreposgrado" class="form-control">
-      </div>
-      <div class="form-group col-md-4">
-        <label>Unidad hospitalaria</label>
-        <input type="text" id="unidadhospitalaria" name="unidadhospitalaria" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Fecha de inicio</label>
-        <input type="date" id="fechaposgradoinicio" name="fechaposgradoinicio" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Fecha término</label>
-        <input type="date" id="fechaposgradotermino" name="fechaposgradotermino" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Años cursados</label>
-        <input type="text" id="tiempocursadoposgrado" name="tiempocursadoposgrado" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Documento que recibe</label>
-        <input type="text" id="documentorecibeposgrado" name="documentorecibeposgrado" class="form-control">
-      </div>
+                        for (let i = 0; i < quantity; i++) {
+                            content += `<div class="form-row">
+                          
+                                    <h1 style="font-size:22px; text-align: center;">Información postecnico ${i +1}</h1>
+                                
+                            <div class="form-group col-md-6">
+                                <label>Nombre de la formación académica ${i +1}</label>
+                                <input type="text" id="nombreformacionPostecnico[${i}]" name="nombreformacionPostecnico[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Nombre de la institución educativa ${i +1}</label>
+                                <input type="text" id="nombreinstitucionPostecnico[${i}]" name="nombreinstitucionPostecnico[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Fecha de inicio ${i +1}</label>
+                                <input type="date" id="fechainiciosupPostecnico[${i}]" name="fechainiciosupPostecnico[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Fecha termino ${i +1}</label>
+                                <input type="date" id="fechaterminosupPostecnico[${i}]" name="fechaterminosupPostecnico[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Años cursados ${i +1}</label>
+                                <input type="text" id="tiempocursadosupPostecnico[${i}]" name="tiempocursadosupPostecnico[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Documento que recibe ${i +1}</label>
+                                <input type="text" id="documentorecibePostecnico[${i}]" name="documentorecibePostecnico[]" class="form-control">
+                                </div>
+                          
+                            
+                        </div>`;
+                        }
+                        document.getElementById("divGuestsp").innerHTML = content;
+                    })
+                </script>
+                <div id="divGuestsp"></div>
+  </section>
+  <section>
+      <h3 style="text-align: center;">Nivel licenciatura</h3>
       <div class="form-group col-md-12">
-        <label>N° de cédula profesional</label>
-        <input type="text" id="numerocedulaposgrado" name="numerocedulaposgrado" class="form-control">
-      </div>
+                    <strong>Agregar licenciatura (Solo numeros)</strong>
+                    <input type="number" id="quantity" name="numlicenciaturas" autocomplete="off" class="form-control" min="0" max="5" placeholder="EJEMPLO: 1,2,3 etc">
+                
+                </div>
+                <script>
+                    document.getElementById("quantity").addEventListener("input", (event) => {
+                        let content = '';
 
-      <h3>Nivel Doctorado/Subespecialidad</h3>
+                        const quantity = event.target.value;
 
-      <div class="form-group col-md-4">
-        <label>Nombre de la formación académica</label>
-        <input type="text" id="nombreformaciondoctorado" name="nombreformaciondoctorado" class="form-control">
-      </div>
-      <div class="form-group col-md-4">
-        <label>Nombre de la institución educativa</label>
-        <input type="text" id="nombredoctorado" name="nombredoctorado" class="form-control">
-      </div>
-      <div class="form-group col-md-4">
-        <label>Unidad hospitalaria</label>
-        <input type="text" id="unidadhospitalariadoctorado" name="unidadhospitalariadoctorado" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Fecha de inicio</label>
-        <input type="date" id="fechainiciodoctorado" name="fechainiciodoctorado" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Fecha término</label>
-        <input type="date" id="fechaterminodoctorado" name="fechaterminodoctorado" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Años cursados</label>
-        <input type="text" id="tiempocursadodoctorado" name="tiempocursadodoctorado" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Documento que recibe</label>
-        <input type="text" id="documentorecibedoctorado" name="documentorecibedoctorado" class="form-control">
-      </div>
-      <div class="form-group col-md-12">
-        <label>N° de cédula profesional</label>
-        <input type="text" id="numeroceduladoctorado" name="numeroceduladoctorado" class="form-control">
-      </div>
+                        for (let i = 0; i < quantity; i++) {
+                            content += `<div class="form-row">
+                          
+                                    <h1 style="font-size:22px; text-align: center;">Información licenciatura ${i +1}</h1>
+                                
+                            <div class="form-group col-md-6">
+                                <label>Nombre de la formación académica ${i +1}</label>
+                                <input type="text" id="nombreformacion[${i}]" name="nombreformacion[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Nombre de la institución educativa ${i +1}</label>
+                                <input type="text" id="nombreinstitucion[${i}]" name="nombreinstitucion[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Fecha de inicio ${i +1}</label>
+                                <input type="date" id="fechainicio[${i}]" name="fechainiciosup[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Fecha termino ${i +1}</label>
+                                <input type="date" id="fechatermino[${i}]" name="fechaterminosup[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Años cursados ${i +1}</label>
+                                <input type="text" id="tiempocursado[${i}]" name="tiempocursadosup[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Documento que recibe ${i +1}</label>
+                                <input type="text" id="documentorecibe[${i}]" name="documentorecibe[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-12">
+                                <label>Numero de cedula ${i +1}</label>
+                                <input type="int" id="numerocedula[${i}]" name="numerocedula[]" class="form-control">
+                            </div>
+                            
+                        </div>`;
+                        }
+                        document.getElementById("divGuests").innerHTML = content;
+                    })
+                </script>
+                <div id="divGuests"></div>
+      </section>
+<section>
+<h3 style="text-align: center;">Nivel Maestria</h3>
+<div class="form-group col-md-12">
+                    <strong>Agregar maestria (Solo numeros)</strong>
+                    <input type="number" id="quantity2" name="maestrias" autocomplete="off" class="form-control" min="0" max="5" placeholder="EJEMPLO: 1,2,3 etc">
+                </div>
+                <script>
+                    document.getElementById("quantity2").addEventListener("input", (event) => {
+                        let content = '';
 
+                        const quantity2 = event.target.value;
 
-      <h3>Otros estudios/Alta especialidad</h3>
+                        for (let i = 0; i < quantity2; i++) {
+                            content += `<div class="form-row">
+                            
+                                    <h1 style="font-size:22px; text-align: center;">Información maestria ${i +1}</h1>
+                                
+                            <div class="form-group col-md-6">
+                                <label>Nombre de la formación académica ${i +1}</label>
+                                <input type="text" id="nombreformacionmaestria[${i}]" name="nombreformacionmaestria[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Nombre de la institución educativa ${i +1}</label>
+                                <input type="text" id="nombreinstitucionmaestria[${i}]" name="nombreinstitucionmaestria[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Fecha de inicio ${i +1}</label>
+                                <input type="date" id="fechainiciomaestria[${i}]" name="fechainiciosupmaestria[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Fecha termino ${i +1}</label>
+                                <input type="date" id="fechaterminomaestria[${i}]" name="fechaterminosupmaestria[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Años cursados ${i +1}</label>
+                                <input type="text" id="tiempocursadomaestria[${i}]" name="tiempocursadosupmaestria[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Documento que recibe ${i +1}</label>
+                                <input type="text" id="documentorecibemaestria[${i}]" name="documentorecibemaestria[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-12">
+                                <label>Numero de cedula ${i +1}</label>
+                                <input type="text" id="numerocedulamaestria[${i}]" name="numerocedulamaestria[]" class="form-control">
+                                </div>
+                                
+                            
+                        </div>`;
+                        }
+                        document.getElementById("divGuests2").innerHTML = content;
+                    })
+                </script>
 
+                <div id="divGuests2"></div>
+</section>
+    <section>
+    <h3 style="text-align: center;">Nivel Posgrado/Especialidad</h3>
+    <div class="form-group col-md-12">
+                    <strong>Agregar posgrado/especialidad (Solo numeros)</strong>
+                    <input type="number" id="quantity3" name="posgrados" autocomplete="off" class="form-control" min="0" max="5" placeholder="EJEMPLO: 1,2,3 etc">
+                </div>
+                <script>
+                    document.getElementById("quantity3").addEventListener("input", (event) => {
+                        let content = '';
 
-      <div class="form-group col-md-4">
-        <label>Nombre de la formación académica</label>
-        <input type="text" id="nombreformacionaltaesp" name="nombreformacionaltaesp" class="form-control">
-      </div>
-      <div class="form-group col-md-4">
-        <label>Nombre de la institución educativa</label>
-        <input type="text" id="nombrealtaespecialidad" name="nombrealtaespecialidad" class="form-control">
-      </div>
-      <div class="form-group col-md-4">
-        <label>Unidad hospitalaria</label>
-        <input type="text" id="unidadhospaltaesp" name="unidadhospaltaesp" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Fecha de inicio</label>
-        <input type="date" id="fechainicioaltaesp" name="fechainicioaltaesp" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Fecha término</label>
-        <input type="date" id="fechaterminoaltaesp" name="fechaterminoaltaesp" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Años cursados</label>
-        <input type="text" id="tiempocursadoaltaesp" name="tiempocursadoaltaesp" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Documento que recibe</label>
-        <input type="text" id="documentorecibealtaesp" name="documentorecibealtaesp" class="form-control">
-      </div>
+                        const quantity3 = event.target.value;
 
-      <h3>Otros estudios 1</h3>
+                        for (let i = 0; i < quantity3; i++) {
+                            content += `<div class="form-row">
+                      
+                                    <h1 style="font-size:22px; text-align: center;">Información posgrado/especialidad ${i +1}</h1>
+                                
+                            <div class="form-group col-md-6">
+                                <label>Nombre de la formación académica ${i +1}</label>
+                                <input type="text" id="nombreformacionposgradoespecialidad[${i}]" name="nombreformacionposgradoespecialidad[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Nombre de la institución educativa ${i +1}</label>
+                                <input type="text" id="nombreinstitucionposgradoespecialidad[${i}]" name="nombreinstitucionposgradoespecialidad[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Fecha de inicio ${i +1}</label>
+                                <input type="date" id="fechainiciosupposgradoespecialidad[${i}]" name="fechainiciosupposgradoespecialidad[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Fecha termino ${i +1}</label>
+                                <input type="date" id="fechaterminosupposgradoespecialidad[${i}]" name="fechaterminosupposgradoespecialidad[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Años cursados ${i +1}</label>
+                                <input type="text" id="tiempocursadosupposgradoespecialidad[${i}]" name="tiempocursadosupposgradoespecialidad[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Unidad hospitalaria ${i +1}</label>
+                                <input type="text" id="unidadhospitalariaposgradoespecialidad[${i}]" name="unidadhospitalariaposgradoespecialidad[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Documento que recibe ${i +1}</label>
+                                <input type="text" id="documentorecibeposgradoespecialidad[${i}]" name="documentorecibeposgradoespecialidad[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Numero de cedula ${i +1}</label>
+                                <input type="int" id="numerocedulaposgradoespecialidad[${i}]" name="numerocedulaposgradoespecialidad[]" class="form-control">
+                            </div>
+                            
+                        </div>`;
+                        }
+                        document.getElementById("divGuests3").innerHTML = content;
+                    })
+                </script>
 
-      <div class="form-group col-md-6">
-        <label>Nombre de la formación académica</label>
-        <input type="text" id="nombreformacionotros" name="nombreformacionotros" class="form-control">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Nombre de la institución educativa</label>
-        <input type="text" id="nombreotrosestudiosuno" name="nombreotrosestudiosuno" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Fecha de inico</label>
-        <input type="date" id="fechainiciootrosestudiosuno" name="fechainiciootrosestudiosuno" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Fecha término</label>
-        <input type="date" id="fechaterminootrosestudiosuno" name="fechaterminootrosestudiosuno" class="form-control">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Documento que recibe</label>
-        <input type="text" id="documentorecibeestudiosuno" name="documentorecibeestudiosuno" class="form-control">
-      </div>
+                <div id="divGuests3"></div>
+    </section>
+<section>
+<h3 style="text-align: center;">Nivel Doctorado/Subespecialidad</h3>
+<div class="form-group col-md-12">
+                    <strong>Agregar doctorado (Solo numeros)</strong>
+                    <input type="number" id="quantity4" name="doctorados" autocomplete="off" class="form-control" min="0" max="5" placeholder="EJEMPLO: 1,2,3 etc">
+                </div>
+                <script>
+                    document.getElementById("quantity4").addEventListener("input", (event) => {
+                        let content = '';
 
-      <h3>Otros estudios 2</h3>
+                        const quantity4 = event.target.value;
 
-      <div class="form-group col-md-6">
-        <label>Nombre de la formación académica</label>
-        <input type="text" id="nombreformacionotrosdos" name="nombreformacionotrosdos" class="form-control">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Nombre de la institución educativa</label>
-        <input type="text" id="nombreotrosestudiosdos" name="nombreotrosestudiosdos" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Fecha de inico</label>
-        <input type="date" id="fechainiciootrosestudiosdos" name="fechainiciootrosestudiosdos" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Fecha término</label>
-        <input type="date" id="fechaterminootrosestudiosdos" name="fechaterminootrosestudiosdos" class="form-control">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Documento que recibe</label>
-        <input type="text" id="documentorecibeestudiosdos" name="documentorecibeestudiosdos" class="form-control">
-      </div>
+                        for (let i = 0; i < quantity4; i++) {
+                            content += `<div class="form-row">
+                            
+                                    <h1 style="font-size:22px; text-align: center;">Información doctorado ${i +1}</h1>
+                                
+                            <di v class="form-group col-md-6">
+                                <label>Nombre de la formación académica ${i +1}</label>
+                                <input type="text" id="nombreformaciondoctorado[${i}]" name="nombreformaciondoctorado[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Nombre de la institución educativa ${i +1}</label>
+                                <input type="text" id="nombreinstituciondoctorado[${i}]" name="nombreinstituciondoctorado[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Fecha de inicio ${i +1}</label>
+                                <input type="date" id="fechainiciosupdoctorado[${i}]" name="fechainiciosupdoctorado[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Fecha termino ${i +1}</label>
+                                <input type="date" id="fechaterminosupdoctorado[${i}]" name="fechaterminosupdoctorado[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Años cursados ${i +1}</label>
+                                <input type="text" id="tiempocursadosupdoctorado[${i}]" name="tiempocursadosupdoctorado[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Unidad hospitalaria ${i +1}</label>
+                                <input type="int" id="unidadhospitalariadoctorado[${i}]" name="unidadhospitalariadoctorado[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Documento que recibe ${i +1}</label>
+                                <input type="text" id="documentorecibedoctorado[${i}]" name="documentorecibedoctorado[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Numero de cedula ${i +1}</label>
+                                <input type="text" id="numeroceduladoctorado[${i}]" name="numeroceduladoctorado[]" class="form-control">
+                              </div>
+                            
+                        </div>`;
+                        }
+                        document.getElementById("divGuests4").innerHTML = content;
+                    })
+                </script>
 
+                <div id="divGuests4"></div>
+</section>
+<section>
+<h3 style="text-align: center;">Diplomados</h3>
+<div class="form-group col-md-12">
+                    <strong>Agregar diplomado (Solo numeros)</strong>
+                    <input type="number" id="quantity5" name="diplomado" autocomplete="off" class="form-control" min="0" max="5" placeholder="EJEMPLO: 1,2,3 etc">
+                </div>
+                <script>
+                    document.getElementById("quantity5").addEventListener("input", (event) => {
+                        let content = '';
+
+                        const quantity5 = event.target.value;
+
+                        for (let i = 0; i < quantity5; i++) {
+                            content += `<div class="form-row">
+                                    <h1 style="font-size:22px; text-align: center;">Información diplomado ${i +1}</h1>
+                                
+                            <div class="form-group col-md-6">
+                                <label>Nombre del diplomado ${i +1}</label>
+                                <input type="text" id="nombreformaciondiplomado[${i}]" name="nombreformaciondiplomado[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Nombre de la institución educativa ${i +1}</label>
+                                <input type="text" id="nombreinstituciondiplomado[${i}]" name="nombreinstituciondiplomado[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Fecha de inicio ${i +1}</label>
+                                <input type="date" id="fechainiciosupdiplomado[${i}]" name="fechainiciosupdiplomado[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Fecha termino ${i +1}</label>
+                                <input type="date" id="fechaterminosupdiplomado[${i}]" name="fechaterminosupdiplomado[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Total de horas ${i +1}</label>
+                                <input type="text" id="tiempocursadosupdiplomado[${i}]" name="tiempocursadosupdiplomado[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Modalidad ${i +1}</label>
+                                <select name="modaldaddiplomado[]" id="modaldaddiplomado[${i}]" class="form-control">
+                                    <option value="">Seleccione</option>
+                                    <option value="Presencial">Presencial</option>
+                                    <option value="A distancia">A distancia</option>
+                                    <option value="Mixta">Mixta</option>
+                                </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Documento que recibe ${i +1}</label>
+                                <select name="documentorecibediplomado[]" id="documentorecibediplomado[${i}]" class="form-control">
+                                    <option value="">Seleccione</option>
+                                    <option value="Cosntancia">Cosntancia</option>
+                                    <option value="Diploma">Diploma</option>
+                                    <option value="Reconocimiento">Reconocimiento</option>
+                                    <option value="Certificado">Certificado</option>
+                                </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Asiste como:</label>
+                                    <select class="form-control" name="asistecomodiplomado[]" id="asistecomodiplomado[${i}]" required>
+                                        <option value="Sin dato">Seleccione</option>
+                                        <option value="Participante">Participante</option>
+                                        <option value="Ponente">Ponente</option>
+                                        <option value="Coordinador">Coordinador</option>
+                                        <option value="Profesor titular">Profesor titular</option>
+                                        <option value="Profesor adjunto">Profesor adjunto</option>
+                                </select>
+                                </div>
+                            
+                        </div>`;
+                        }
+                        document.getElementById("divGuests5").innerHTML = content;
+                    })
+                </script>
+
+                <div id="divGuests5"></div>
+</section>
+<section>
+<h3 style="text-align: center;">Certificaciones</h3>
+<div class="form-group col-md-12">
+                    <strong>Agregar certificación (Solo numeros)</strong>
+                    <input type="number" id="quantity6" name="certificaciones" autocomplete="off" class="form-control" min="0" max="5" placeholder="EJEMPLO: 1,2,3 etc">
+                </div>
+                <script>
+                    document.getElementById("quantity6").addEventListener("input", (event) => {
+                        let content = '';
+
+                        const quantity6 = event.target.value;
+
+                        for (let i = 0; i < quantity6; i++) {
+                            content += `<div class="form-row">
+                                    <h1 style="font-size:22px; text-align: center;">Información certificación ${i +1}</h1>
+                                
+                            <div class="form-group col-md-6">
+                                <label>Nombre de la certificación ${i +1}</label>
+                                <input type="text" id="nombreformacioncertificacion[${i}]" name="nombreformacioncertificacion[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Nombre de la institución educativa ${i +1}</label>
+                                <input type="text" id="nombreinstitucioncertificacion[${i}]" name="nombreinstitucioncertificacion[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Fecha de inicio ${i +1}</label>
+                                <input type="date" id="fechainiciosupcertificacion[${i}]" name="fechainiciosupcertificacion[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Fecha termino ${i +1}</label>
+                                <input type="date" id="fechaterminosupcertificacion[${i}]" name="fechaterminosupcertificacion[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Total de horas ${i +1}</label>
+                                <input type="text" id="tiempocursadosupcertificacion[${i}]" name="tiempocursadosupcertificacion[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Modalidad ${i +1}</label>
+                                <select name="modaldadcertificacion[]" id="modaldadcertificacion[${i}]" class="form-control">
+                                    <option value="">Seleccione</option>
+                                    <option value="Presencial">Presencial</option>
+                                    <option value="A distancia">A distancia</option>
+                                    <option value="Mixta">Mixta</option>
+                                </select>
+                                </div>
+                                
+                            
+                        </div>`;
+                        }
+                        document.getElementById("divGuests6").innerHTML = content;
+                    })
+                </script>
+
+                <div id="divGuests6"></div>
+</section>
+<section>
+<h3 style="text-align: center;">Estudios Alta especialidad</h3>
+<div class="form-group col-md-12">
+                    <strong>Agregar Estudios Alta especialidad (Solo numeros)</strong>
+                    <input type="number" id="quantity7" name="otrosestudios" autocomplete="off" class="form-control" min="0" max="5" placeholder="EJEMPLO: 1,2,3 etc">
+                </div>
+                <script>
+                    document.getElementById("quantity7").addEventListener("input", (event) => {
+                        let content = '';
+
+                        const quantity7 = event.target.value;
+
+                        for (let i = 0; i < quantity7; i++) {
+                            content += `<div class="form-row">
+                                    <h1 style="font-size:22px; text-align: center;">Información Estudios Alta especialidad ${i +1}</h1>
+                                
+                            <div class="form-group col-md-6">
+                                <label>Nombre de la formación ${i +1}</label>
+                                <input type="text" id="nombreformacionaltaesp[${i}]" name="nombreformacionaltaesp[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Nombre de la institución educativa ${i +1}</label>
+                                <input type="text" id="nombrealtaespecialidad[${i}]" name="nombrealtaespecialidad[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Unidad hospitalaria ${i +1}</label>
+                                <input type="text" id="unidadhospaltaesp[${i}]" name="unidadhospaltaesp[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Fecha de inicio ${i +1}</label>
+                                <input type="date" id="fechainicioaltaesp[${i}]" name="fechainicioaltaesp[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-3">
+                                <label>Fecha termino ${i +1}</label>
+                                <input type="date" id="fechaterminoaltaesp[${i}]" name="fechaterminoaltaesp[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Años cursados ${i +1}</label>
+                                <input type="text" id="tiempocursadoaltaesp[${i}]" name="tiempocursadoaltaesp[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Documento que recibe ${i +1}</label>
+                                <input type="text" id="documentorecibealtaesp[${i}]" name="documentorecibealtaesp[]" class="form-control">
+                                </div>
+                        </div>`;
+                        }
+                        document.getElementById("divGuests7").innerHTML = content;
+                    })
+                </script>
+
+                <div id="divGuests7"></div>
+</section>
+<section>
+<h3 style="text-align: center;">Otro estudios</h3>
+<div class="form-group col-md-12">
+                    <strong>Agregar estudios (Solo numeros)</strong>
+                    <input type="number" id="quantity8" name="otrosestudios" autocomplete="off" class="form-control" min="0" max="5" placeholder="EJEMPLO: 1,2,3 etc">
+                </div>
+                <script>
+                    document.getElementById("quantity8").addEventListener("input", (event) => {
+                        let content = '';
+
+                        const quantity8 = event.target.value;
+
+                        for (let i = 0; i < quantity8; i++) {
+                            content += `<div class="form-row">
+                                    <h1 style="font-size:22px; text-align: center;">Información otros estudios ${i +1}</h1>
+                                
+                            <div class="form-group col-md-6">
+                                <label>Nombre de la formación ${i +1}</label>
+                                <input type="text" id="nombreformacionotros[${i}]" name="nombreformacionotros[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Nombre de la institución educativa ${i +1}</label>
+                                <input type="text" id="nombreotrosestudiosuno[${i}]" name="nombreotrosestudiosuno[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Fecha de inicio ${i +1}</label>
+                                <input type="date" id="fechainiciootrosestudiosuno[${i}]" name="fechainiciootrosestudiosuno[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-6">
+                                <label>Fecha termino ${i +1}</label>
+                                <input type="date" id="fechaterminootrosestudiosuno[${i}]" name="fechaterminootrosestudiosuno[]" class="form-control">
+                                </div>
+                                <div class="form-group col-md-12">
+                                <label>Documento que recibe ${i +1}</label>
+                                <input type="text" id="documentorecibeestudiosuno[${i}]" name="documentorecibeestudiosuno[]" class="form-control">
+                                </div>
+                        </div>`;
+                        }
+                        document.getElementById("divGuests8").innerHTML = content;
+                    })
+                </script>
+
+                <div id="divGuests8"></div>
+</section>
+    
       <h3>Servicio social</h3>
 
       <div class="form-group col-md-6">
@@ -741,53 +1008,7 @@
         <label>Documento recibido</label>
         <input type="text" id="documentorecibepracticas" name="documentorecibepracticas" class="form-control">
       </div>
-
-      <h3>Certificación</h3>
-
-      <div class="form-group col-md-6">
-        <label>Nombre de la institución educativa</label>
-        <input type="text" id="nombreformacioncertificauno" name="nombreformacioncertificauno" class="form-control">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Especialidad que certifica</label>
-        <input type="text" id="nombrecertificacionuno" name="nombrecertificacionuno" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Fecha de inicio</label>
-        <input type="date" id="fechainiciocertificacionuno" name="fechainiciocertificacionuno" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Fecha término</label>
-        <input type="date" id="fechaterminocertificacionuno" name="fechaterminocertificacionuno" class="form-control">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Documento que acredita</label>
-        <input type="text" id="documentocertificacionuno" name="documentocertificacionuno" class="form-control">
-      </div>
-
-      <h3>Segunda Certificación</h3>
-
-      <div class="form-group col-md-6">
-        <label>Nombre de la institución educativa</label>
-        <input type="text" id="nombreformacioncertificaciondos" name="nombreformacioncertificaciondos" class="form-control">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Especialidad que certifica</label>
-        <input type="text" id="nombrecertificaciondos" name="nombrecertificaciondos" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Fecha de inicio</label>
-        <input type="date" id="fechainiciocertificaciondos" name="fechainiciocertificaciondos" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Fecha término</label>
-        <input type="date" id="fechaterminocertificaciondos" name="fechaterminocertificaciondos" class="form-control">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Documento que acredita</label>
-        <input type="text" id="documentocertificaciondos" name="documentocertificaciondos" class="form-control">
-      </div>
-
+<!--
       <h3>Actualización academica<br>
         Primer curso.</h3>
 
@@ -881,7 +1102,7 @@
           <option value="Internacional">Internacional</option>
         </select>
       </div>
-
+                  -->
       <h3>Experiencia laboral, sector público.</h3>
 
       <div class="form-group col-md-6">
@@ -1103,135 +1324,73 @@
         <label>Fecha término de labores</label>
         <input type="date" class="form-control" id="fechaterminotres" name="fechaterminotres">
       </div>
-      <h3>Experiencia laboral, sector privado.</h3>
+
+<section>
+<h3 style="text-align: center;">Exp. laboral sector privado</h3>
+<div class="form-group col-md-12">
+                    <strong>Agregar Exp. laboral sector privado (Solo numeros)</strong>
+                    <input type="number" id="quantity9" name="explaboral" autocomplete="off" class="form-control" min="0" max="5" placeholder="EJEMPLO: 1,2,3 etc">
+                </div>
+                <script>
+                    document.getElementById("quantity9").addEventListener("input", (event) => {
+                        let content = '';
+
+                        const quantity9 = event.target.value;
+
+                        for (let i = 0; i < quantity9; i++) {
+                            content += `<div class="form-row">
+                            
+                                    <h1 style="font-size:22px; text-align: center;">Información Exp. laboral sector privado ${i +1}</h1>
+                                
 
       <div class="form-group col-md-6">
         <label>Nombre de la empresa</label>
-        <input type="text" class="form-control" autocomplete="off" id="nombrelaboralprivada" name="nombrelaboralprivada">
+        <input type="text" class="form-control" autocomplete="off" id="nombrelaboralprivada[]" name="nombrelaboralprivada[]">
       </div>
       <div class="form-group col-md-6">
         <label>Tipo de puesto</label>
-        <input type="text" class="form-control" autocomplete="off" id="tipopuestoprivada" name="tipopuestoprivada">
+        <input type="text" class="form-control" autocomplete="off" id="tipopuestoprivada[]" name="tipopuestoprivada[]">
       </div>
       <div class="form-group col-md-6">
         <label>Dirección de la empresa</label>
-        <input type="text" class="form-control" autocomplete="off" id="direccionempresaprivada" name="direccionempresaprivada">
+        <input type="text" class="form-control" autocomplete="off" id="direccionempresaprivada[]" name="direccionempresaprivada[]">
       </div>
       <div class="form-group col-md-3">
         <label>Teléfono de contacto</label>
-        <input type="text" class="form-control" autocomplete="off" id="telefonoempresaprivada" name="telefonoempresaprivada">
+        <input type="text" class="form-control" autocomplete="off" id="telefonoempresaprivada[]" name="telefonoempresaprivada[]">
       </div>
       <div class="form-group col-md-3">
         <label>Extensión</label>
-        <input type="text" class="form-control" autocomplete="off" id="extencionempresaprivada" name="extencionempresaprivada">
+        <input type="text" class="form-control" autocomplete="off" id="extencionempresaprivada[]" name="extencionempresaprivada[]">
       </div>
       <div class="form-group col-md-6">
         <label>Nombre de su jefe directo</label>
-        <input type="text" class="form-control" autocomplete="off" id="nombrejefeprivada" name="nombrejefeprivada">
+        <input type="text" class="form-control" autocomplete="off" id="nombrejefeprivada[]" name="nombrejefeprivada[]">
       </div>
       <div class="form-group col-md-6">
         <label>Motivo de su sepación</label>
-        <input type="text" class="form-control" autocomplete="off" id="motivoseparacionprivada" name="motivoseparacionprivada">
+        <input type="text" class="form-control" autocomplete="off" id="motivoseparacionprivada[]" name="motivoseparacionprivada[]">
       </div>
       <div class="form-group col-md-12">
         <label>Funciones principales</label>
-        <textarea rows="4" class="form-control" autocomplete="off" id="funcionesprivada" name="funcionesprivada"></textarea>
+        <textarea rows="4" class="form-control" autocomplete="off" id="funcionesprivada[]" name="funcionesprivada[]"></textarea>
       </div>
       <div class="form-group col-md-6">
         <label>Fecha de inicio de labores</label>
-        <input type="date" class="form-control" autocomplete="off" id="fechainicioprivada" name="fechainicioprivada">
+        <input type="date" class="form-control" autocomplete="off" id="fechainicioprivada[]" name="fechainicioprivada[]">
       </div>
       <div class="form-group col-md-6">
         <label>Fecha término de labores</label>
-        <input type="date" class="form-control" autocomplete="off" id="fechaterminoprivada" name="fechaterminoprivada">
+        <input type="date" class="form-control" autocomplete="off" id="fechaterminoprivada[]" name="fechaterminoprivada[]">
       </div>
+      </div>`;
+                        }
+                        document.getElementById("divGuests9").innerHTML = content;
+                    })
+                </script>
 
-      <h3>Experiencia laboral, sector privado, segundo.</h3>
-
-      <div class="form-group col-md-6">
-        <label>Nombre de la empresa</label>
-        <input type="text" class="form-control" autocomplete="off" id="nombrelaboralprivadados" name="nombrelaboralprivadados">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Tipo de puesto</label>
-        <input type="text" class="form-control" autocomplete="off" id="tipopuestoprivadados" name="tipopuestoprivadados">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Dirección de la empresa</label>
-        <input type="text" class="form-control" autocomplete="off" id="direccionempresaprivadados" name="direccionempresaprivadados">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Teléfono de contacto</label>
-        <input type="text" class="form-control" autocomplete="off" id="telefonoempresaprivadados" name="telefonoempresaprivadados">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Extensión</label>
-        <input type="text" class="form-control" autocomplete="off" id="extencionempresaprivadados" name="extencionempresaprivadados">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Nombre de su jefe directo</label>
-        <input type="text" class="form-control" autocomplete="off" id="nombrejefeprivadados" name="nombrejefeprivadados">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Motivo de su sepación</label>
-        <input type="text" class="form-control" autocomplete="off" id="motivoseparacionprivadados" name="motivoseparacionprivadados">
-      </div>
-      <div class="form-group col-md-12">
-        <label>Funciones principales</label>
-        <textarea rows="4" class="form-control" autocomplete="off" id="funcionesprivadados" name="funcionesprivadados"></textarea>
-      </div>
-      <div class="form-group col-md-6">
-        <label>Fecha de inicio de labores</label>
-        <input type="date" class="form-control" autocomplete="off" id="fechainicioprivadados" name="fechainicioprivadados">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Fecha término de labores</label>
-        <input type="date" class="form-control" autocomplete="off" id="fechaterminoprivadados" name="fechaterminoprivadados">
-      </div>
-
-      <h3>Experiencia laboral, sector privado, tercero.</h3>
-
-      <div class="form-group col-md-6">
-        <label>Nombre de la empresa</label>
-        <input type="text" class="form-control" autocomplete="off" id="nombrelaboralprivadatres" name="nombrelaboralprivadatres">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Tipo de puesto</label>
-        <input type="text" class="form-control" autocomplete="off" id="tipopuestoprivadatres" name="tipopuestoprivadatres">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Dirección de la empresa</label>
-        <input type="text" class="form-control" autocomplete="off" id="direccionempresaprivadatres" name="direccionempresaprivadatres">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Telefono de contacto</label>
-        <input type="text" class="form-control" autocomplete="off" id="telefonoempresaprivadatres" name="telefonoempresaprivadatres">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Extensión</label>
-        <input type="text" class="form-control" autocomplete="off" id="extencionempresaprivadatres" name="extencionempresaprivadatres">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Nombre de su jefe directo</label>
-        <input type="text" class="form-control" autocomplete="off" id="nombrejefeprivadatres" name="nombrejefeprivadatres">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Motivo de su sepación</label>
-        <input type="text" class="form-control" autocomplete="off" id="motivoseparacionprivadatres" name="motivoseparacionprivadatres">
-      </div>
-      <div class="form-group col-md-12">
-        <label>Funciones principales</label>
-        <textarea rows="4" class="form-control" autocomplete="off" id="funcionesprivadatres" name="funcionesprivadatres"></textarea>
-      </div>
-      <div class="form-group col-md-6">
-        <label>Fecha de inicio de labores</label>
-        <input type="date" class="form-control" autocomplete="off" id="fechainicioprivadatres" name="fechainicioprivadatres">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Fecha término de labores</label>
-        <input type="date" class="form-control" autocomplete="off" id="fechaterminoprivadatres" name="fechaterminoprivadatres">
-      </div>
-
+                <div id="divGuests9"></div>
+</section>
       <h3>Producción cientifica (Investigación, última publicación).</h3>
 
       <div class="form-group col-md-6">
