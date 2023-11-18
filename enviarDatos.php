@@ -63,6 +63,17 @@ error_reporting(0);
                     ':documentomediosuperior' => $documentomediosuperior,
                     ':id_postulado' => $id_user
                 ));
+                $sql = $conexion->prepare("INSERT into estudiostecnico (nombreinstituciontecnica,nombreformaciontecnica,fechainiciotecnico,fechaterminotecnico,tiempocursadotecnico,documentotecnico,id_empleado)
+                values(:nombreinstituciontecnica,:nombreformaciontecnica,:fechainiciotecnico,:fechaterminotecnico,:tiempocursadotecnico,:documentotecnico,:id_empleado)");
+    $sql->execute(array(
+        ':nombreinstituciontecnica' => $nombreinstituciontecnica,
+        ':nombreformaciontecnica' => $nombreformaciontecnica,
+        ':fechainiciotecnico' => $fechainiciotecnico,
+        ':fechaterminotecnico' => $fechaterminotecnico,
+        ':tiempocursadotecnico' => $tiempocursadotecnico,
+        ':documentotecnico' => $documentotecnico,
+        ':id_empleado' => $id_user
+    ));
             if($nombreformacionPostecnico != '' and $nombreinstitucionPostecnico != ''){
                 $arraynombreformacionPostecnico = array_map("htmlspecialchars", $nombreformacionPostecnico);
                 $arraynombreinstitucionPostecnico = array_map("htmlspecialchars", $nombreinstitucionPostecnico);
@@ -202,34 +213,31 @@ error_reporting(0);
         }
         $sql->execute();
     } 
-                /*
-                $sql = $conexion->prepare("INSERT INTO otrosestudiosaltaesp(nombreformacionaltaesp, nombrealtaespecialidad, unidadhospaltaesp, fechainicioaltaesp, fechaterminoaltaesp, tiempocursadoaltaesp, documentorecibealtaesp, 
-                    nombreformacionotros,nombreotrosestudiosuno,fechainiciootrosestudiosuno,  fechaterminootrosestudiosuno, documentorecibeestudiosuno,
-                    nombreformacionotrosdos, nombreotrosestudiosdos, fechainiciootrosestudiosdos, fechaterminootrosestudiosdos, documentorecibeestudiosdos,  id_postulado)
-                    VALUES(:nombreformacionaltaesp,:nombrealtaespecialidad,:unidadhospaltaesp,:fechainicioaltaesp,:fechaterminoaltaesp,:tiempocursadoaltaesp,:documentorecibealtaesp, 
-                    :nombreformacionotros,:nombreotrosestudiosuno, :fechainiciootrosestudiosuno, :fechaterminootrosestudiosuno, :documentorecibeestudiosuno, 
-                    :nombreformacionotrosdos,:nombreotrosestudiosdos, :fechainiciootrosestudiosdos, :fechaterminootrosestudiosdos, :documentorecibeestudiosdos, :id_postulado)");
-                $sql->execute(array(
-                    ':nombreformacionaltaesp' => $nombreformacionaltaesp,
-                    ':nombrealtaespecialidad' => $nombrealtaespecialidad,
-                    ':unidadhospaltaesp' => $unidadhospaltaesp,
-                    ':fechainicioaltaesp' => $fechainicioaltaesp,
-                    ':fechaterminoaltaesp' => $fechaterminoaltaesp,
-                    ':tiempocursadoaltaesp' => $tiempocursadoaltaesp,
-                    ':documentorecibealtaesp' => $documentorecibealtaesp,
-                    ':nombreformacionotros' => $nombreformacionotros,
-                    ':nombreotrosestudiosuno' => $nombreotrosestudiosuno,
-                    ':fechainiciootrosestudiosuno' => $fechainiciootrosestudiosuno,
-                    ':fechaterminootrosestudiosuno' => $fechaterminootrosestudiosuno,
-                    ':documentorecibeestudiosuno' => $documentorecibeestudiosuno,
-                    ':nombreformacionotrosdos' => $nombreformacionotrosdos,
-                    ':nombreotrosestudiosdos' => $nombreotrosestudiosdos,
-                    ':fechainiciootrosestudiosdos' => $fechainiciootrosestudiosdos,
-                    ':fechaterminootrosestudiosdos' => $fechaterminootrosestudiosdos,
-                    ':documentorecibeestudiosdos' => $documentorecibeestudiosdos,
-                    ':id_postulado' => $id_user
-                ));
-*/
+    if($nombreformacionaltaesp != '' and $nombrealtaespecialidad != ''){
+        $arraynombreformacionaltaesp = array_map("htmlspecialchars", $nombreformacionaltaesp);
+$arraynombrealtaespecialidad = array_map("htmlspecialchars", $nombrealtaespecialidad);
+$arrayunidadhospaltaesp = array_map("htmlspecialchars", $unidadhospaltaesp);
+$arrayfechainicioaltaesp = array_map("htmlspecialchars", $fechainicioaltaesp);
+$arrayfechaterminoaltaesp = array_map("htmlspecialchars", $fechaterminoaltaesp);
+$arraytiempocursadoaltaesp = array_map("htmlspecialchars", $tiempocursadoaltaesp);
+$arraydocumentorecibealtaesp = array_map("htmlspecialchars", $documentorecibealtaesp);
+
+
+foreach($arraynombreformacionaltaesp as $clavedaltaesp => $nombreformacionaltaesp){
+
+    $nombrealtaespecialidad = $arraynombrealtaespecialidad[$clavedaltaesp];
+    $unidadhospaltaesp = $arrayunidadhospaltaesp[$clavedaltaesp];
+    $fechainicioaltaesp = $arrayfechainicioaltaesp[$clavedaltaesp];
+    $fechaterminoaltaesp = $arrayfechaterminoaltaesp[$clavedaltaesp];
+    $tiempocursadoaltaesp = $arraytiempocursadoaltaesp[$clavedaltaesp];
+    $documentorecibealtaesp = $arraydocumentorecibealtaesp[$clavedaltaesp];
+    $datoOtrosAltaEsp[] = '("'.$nombreformacionaltaesp.'","' .$nombrealtaespecialidad. '","' .$unidadhospaltaesp . '","' .$fechainicioaltaesp . '","' .$fechaterminoaltaesp . '","' .$tiempocursadoaltaesp . '","' .$documentorecibealtaesp . '","' .$id_user . '")';
+                
+                $sql = $conexion->prepare("INSERT INTO otrosestudiosaltaesp(nombreformacionaltaesp, nombrealtaespecialidad, unidadhospaltaesp, fechainicioaltaesp, fechaterminoaltaesp, tiempocursadoaltaesp, documentorecibealtaesp, id_postulado) VALUES " . implode(', ', $datoOtrosAltaEsp));
+}
+                $sql->execute();
+    }
+                
 
                 $sql = $conexion->prepare("INSERT INTO socialpracticas(nombreserviciosocial, fechainicioservicio, fechaterminoservicio, laboresservicio, documentorecibeservicio,
                         nombrepracticas, fechainiciopracticas, fechaterminopracticas, laborespracticas, documentorecibepracticas, id_postulado) 
