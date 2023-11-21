@@ -237,6 +237,26 @@ foreach($arraynombreformacionaltaesp as $clavedaltaesp => $nombreformacionaltaes
 }
                 $sql->execute();
     }
+
+    if($nombreformacionotros != '' and $nombreotrosestudiosuno != ''){
+        $arraynombreformacionotros = array_map("htmlspecialchars", $nombreformacionotros);
+$arraynombreotrosestudiosuno = array_map("htmlspecialchars", $nombreotrosestudiosuno);
+$arrayfechainiciootrosestudiosuno = array_map("htmlspecialchars", $fechainiciootrosestudiosuno);
+$arrayfechaterminootrosestudiosuno = array_map("htmlspecialchars", $fechaterminootrosestudiosuno);
+$arraydocumentorecibeestudiosuno = array_map("htmlspecialchars", $documentorecibeestudiosuno);
+
+
+foreach($arraynombreformacionotros as $claveotros => $nombreformacionotros){
+    $nombreotrosestudiosuno = $arraynombreotrosestudiosuno[$claveotros];
+    $fechainiciootrosestudiosuno = $arrayfechainiciootrosestudiosuno[$claveotros];
+    $fechaterminootrosestudiosuno = $arrayfechaterminootrosestudiosuno[$claveotros];
+    $documentorecibeestudiosuno = $arraydocumentorecibeestudiosuno[$claveotros];
+    $datoOtrosEstudios[] = '("'.$nombreformacionotros.'","' .$nombreotrosestudiosuno. '","' .$fechainiciootrosestudiosuno . '","' .$fechaterminootrosestudiosuno . '","' .$documentorecibeestudiosuno . '","' .$id_user . '")';
+                
+                $sql = $conexion->prepare("INSERT INTO otrosestudios(nombreformacionotros, nombreotrosestudiosuno, fechainiciootrosestudiosuno, fechaterminootrosestudiosuno, documentorecibeestudiosuno, id_postulado) VALUES " . implode(', ', $datoOtrosEstudios));
+}
+                $sql->execute();
+    }
                 
 
                 $sql = $conexion->prepare("INSERT INTO socialpracticas(nombreserviciosocial, fechainicioservicio, fechaterminoservicio, laboresservicio, documentorecibeservicio,
@@ -257,25 +277,34 @@ foreach($arraynombreformacionaltaesp as $clavedaltaesp => $nombreformacionaltaes
                     ':id_postulado' => $id_user
                 ));
 
-/*
-                $sql = $conexion->prepare("INSERT INTO cerficacion(nombreformacioncertificauno, nombrecertificacionuno, fechainiciocertificacionuno, fechaterminocertificacionuno, documentocertificacionuno,
-                    nombreformacioncertificaciondos,nombrecertificaciondos ,fechainiciocertificaciondos, fechaterminocertificaciondos, documentocertificaciondos,id_postulado)
-                    VALUES(:nombreformacioncertificauno,:nombrecertificacionuno,:fechainiciocertificacionuno,:fechaterminocertificacionuno,:documentocertificacionuno,
-                    :nombreformacioncertificaciondos,:nombrecertificaciondos, :fechainiciocertificaciondos, :fechaterminocertificaciondos, :documentocertificaciondos,:id_postulado)");
-                $sql->execute(array(
-                    ':nombreformacioncertificauno' => $nombreformacioncertificauno,
-                    ':nombrecertificacionuno' => $nombrecertificacionuno,
-                    ':fechainiciocertificacionuno' => $fechainiciocertificacionuno,
-                    ':fechaterminocertificacionuno' => $fechaterminocertificacionuno,
-                    ':documentocertificacionuno' => $documentocertificacionuno,
-                    ':nombreformacioncertificaciondos' => $nombreformacioncertificaciondos,
-                    ':nombrecertificaciondos' => $nombrecertificaciondos,
-                    ':fechainiciocertificaciondos' => $fechainiciocertificaciondos,
-                    ':fechaterminocertificaciondos' => $fechaterminocertificaciondos,
-                    ':documentocertificaciondos' => $documentocertificaciondos,
-                    ':id_postulado' => $id_user
-                ));
+if($nombreformacioncertificacion != '' and $nombreinstitucioncertificacion != ''){
 
+    $arraynombreformacioncertificacion = array_map("htmlspecialchars", $nombreformacioncertificacion);
+    $arraynombreinstitucioncertificacion = array_map("htmlspecialchars", $nombreinstitucioncertificacion);
+    $arrayfechainiciosupcertificacion = array_map("htmlspecialchars", $fechainiciosupcertificacion);
+    $arrayfechaterminosupcertificacion = array_map("htmlspecialchars", $fechaterminosupcertificacion);
+    $arraytiempocursadosupcertificacion = array_map("htmlspecialchars", $tiempocursadosupcertificacion);
+    $arraymodalidadcertificacion = array_map("htmlspecialchars", $modalidadcertificacion);
+    $arraydocumentorecibecertificacion = array_map("htmlspecialchars", $documentorecibecertificacion);
+
+    foreach($arraynombreformacioncertificacion as $clavecertificacion => $nombreformacioncertificacion){
+        $nombreinstitucioncertificacion = $arraynombreinstitucioncertificacion[$clavecertificacion];
+        $fechainiciosupcertificacion = $arrayfechainiciosupcertificacion[$clavecertificacion];
+        $fechaterminosupcertificacion = $arrayfechaterminosupcertificacion[$clavecertificacion];
+        $tiempocursadosupcertificacion = $arraytiempocursadosupcertificacion[$clavecertificacion];
+        $modalidadcertificacion = $arraymodalidadcertificacion[$clavecertificacion];
+        $documentorecibecertificacion = $arraydocumentorecibecertificacion[$clavecertificacion];
+        $DatoCertificacion[] = '("'.$nombreformacioncertificacion.'","' .$nombreinstitucioncertificacion. '","' .$fechainiciosupcertificacion . '","' .$fechaterminosupcertificacion . '","' .$tiempocursadosupcertificacion . '","' .$modalidadcertificacion . '","' .$documentorecibecertificacion . '","' .$id_user . '")';
+                    
+    $sql = $conexion->prepare("INSERT INTO cerficacion(nombreformacioncertificauno, nombrecertificacionuno, fechainiciocertificacionuno, fechaterminocertificacionuno,tiempocursadosupcertificacion,modalidadcertificacion,
+                 documentorecibecertificacion,id_postulado)
+                    VALUES " . implode(', ', $DatoCertificacion));
+}
+    $sql->execute();
+}
+
+
+/*
                 $sql = $conexion->prepare("INSERT INTO actualizacionacademica(nombrecursouno, institucioncursouno, fechainiciocursouno, fechaterminocursouno, documentorecibecursouno, nacionalprimero,
                     nombrecursodos, institucioncursodos,fechainiciocursodos,fechaterminocursodos,documentorecibecursodos, nacionalsegundo, 
                     nombrecursotres, institucioncursotres, fechainiciocursotres, fechaterminocursotres, documentorecibecursotres,nacionaltercero ,id_postulado)
@@ -433,9 +462,7 @@ foreach($arraynombreformacionaltaesp as $clavedaltaesp => $nombreformacionaltaes
     
 }
 }catch(Exception $e) {
-    ?><br><br><br><br><br><br><br><br><br><br><br><br>
-<?php
-    echo $e;
+    
     $conexion->rollBack();
     echo "<script>Swal.fire({
         position: 'top-end',

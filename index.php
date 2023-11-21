@@ -254,9 +254,8 @@
 
   <div class="data"></div>
   <div class="loader"></div>
-  <div class="container">
   <div class="form-row">
-  <form method="POST" id="formulario" name="formulario" autocomplete="off" onsubmit="return limpiar()" style="padding: 10px;">
+  <form id="formulario" name="formulario" autocomplete="off" onsubmit="return limpiar()" style="padding: 10px;">
   <section style="width: 100%; height: auto;">
   <h3 style="text-align: center;">Registra tu información</h3>
         <h4 style="text-align: center;">Información personal</h4>
@@ -849,12 +848,16 @@
                                 </div>
                                 <div class="form-group col-md-3">
                                 <label>Modalidad ${i +1}</label>
-                                <select name="modaldadcertificacion[]" id="modaldadcertificacion[${i}]" class="form-control">
+                                <select name="modalidadcertificacion[]" id="modalidadcertificacion[${i}]" class="form-control">
                                     <option value="">Seleccione</option>
                                     <option value="Presencial">Presencial</option>
                                     <option value="A distancia">A distancia</option>
                                     <option value="Mixta">Mixta</option>
                                 </select>
+                                </div>
+                                <div class="form-group col-md-12">
+                                <label>Documento que recibe ${i +1}</label>
+                                <input type="text" id="documentorecibecertificacion[${i}]" name="documentorecibecertificacion[]" class="form-control">
                                 </div>
                                 
                             
@@ -919,9 +922,9 @@
                 <div id="divGuests7"></div>
 </section>
 <section>
-<h3 style="text-align: center;">Otro estudios</h3>
+<h3 style="text-align: center;">Otros estudios</h3>
 <div class="form-group col-md-12">
-                    <strong>Agregar estudios (Solo numeros)</strong>
+                    <strong>Agregar otros estudios (Solo numeros)</strong>
                     <input type="number" id="quantity8" name="otrosestudios" autocomplete="off" class="form-control" min="0" max="5" placeholder="EJEMPLO: 1,2,3 etc">
                 </div>
                 <script>
