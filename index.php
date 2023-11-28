@@ -32,15 +32,31 @@
   .box1 {
     display: grid;
     gap: 1rem;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr;
     margin-top: 0px;
     margin-left: 0px;
     padding: 5px;
 
   }
-
+  
   #card {
     height: 93vh;
+    overflow: hidden;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    box-shadow: 10px 5px 5px #515151;
+    border-radius: 10px;
+    color: #333;
+    cursor: pointer;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    margin-top: 0;
+    margin-bottom: 0;
+
+  }
+  #card2 {
+    height: 30vh;
     overflow: hidden;
     padding: 10px;
     background-color: white;
@@ -216,7 +232,7 @@
   </div>
   <br>
   <div class="box1">
-    <div id="card">
+    <div id="card2">
       <h1 style="font-size: 2.5rem; text-align: center;"> Aviso de Confidencialidad</h1>
       <strong style="font-size: 1.5rem; text-align: center;">La información contenida en tu currículum vitae institucional, contiene datos personales considerados
         confidenciales en términos de los artículos 23 y 68, fracciones I, II, IV y V, segundo párrafo, y 116
