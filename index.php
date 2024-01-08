@@ -1410,43 +1410,6 @@
 
                 <div id="divGuests9"></div>
 </section>
-      <h3>Producción cientifica (Investigación, última publicación).</h3>
-
-      <div class="form-group col-md-6">
-        <label>Nombre del artículo o publicación</label>
-        <input type="text" id="nombrepublicacion" name="nombrepublicacion" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Año de publiación</label>
-        <input type="date" id="tiempopublicacion" name="tiempopublicacion" class="form-control">
-      </div>
-      <div class="form-group col-md-3">
-        <label>Publicado en...</label>
-        <input type="text" id="publicadoen" name="publicadoen" class="form-control">
-      </div>
-      <div class="form-group col-md-12">
-        <label>País de publicación</label>
-        <input type="text" id="paisdepublicacion" name="paisdepublicacion" class="form-control">
-      </div>
-
-      <h3>Idioma.</h3>
-
-      <div class="form-group col-md-6">
-        <label>Idioma.</label>
-        <input type="text" id="nombreidioma" name="nombreidioma" class="form-control">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Nivel</label>
-        <input type="text" id="nivel" name="nivel" class="form-control">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Dominio</label>
-        <input type="text" id="niveldedominio" name="niveldedominio" class="form-control">
-      </div>
-      <div class="form-group col-md-6">
-        <label>Documento que acredita tu idioma.</label>
-        <input type="text" id="documentoacredita" name="documentoacredita" class="form-control">
-      </div>
 
       <h3>Otras habilidades.</h3>
 
